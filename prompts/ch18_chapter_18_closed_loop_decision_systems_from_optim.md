@@ -7,74 +7,54 @@
 ## Experiment Prompt
 
 ```
-You are participating in an experiment comparing AI-only reasoning versus explicit Decision Intelligence (DI) formulation for a constrained closed-loop AI infrastructure optimization problem.
-An AI infrastructure platform continuously receives changing workload demand throughout the day.
-At the current optimization cycle, the workloads are:
-Training Job A:
-- GPU requirement: 8 GPUs
-- Expected business value: 15
-Inference Service B:
-- GPU requirement: 5 GPUs
-- Expected business value: 11
-Analytics Job C:
-- GPU requirement: 4 GPUs
-- Expected business value: 8
-Realtime Service D:
-- GPU requirement: 6 GPUs
-- Expected business value: 13
-The infrastructure currently has 16 GPUs available.
-The optimization process repeats every 5 minutes as workload demand changes.
-The objective is to maximize total business value while staying within available GPU capacity during each optimization cycle.
-Your task is to solve this problem in TWO ways.
-----------------------------------------
-PART 1 — AI-ONLY REASONING
-----------------------------------------
-Do not explicitly formulate the problem using mathematical optimization, adaptive control methods, integer programming, or exhaustive enumeration.
-Solve the problem naturally as a reasoning-oriented AI assistant.
+You are participating in an experiment comparing AI-only reasoning versus explicit Decision Intelligence (DI) formulation for a closed-loop re-optimization problem.
+
+A data center allocates workloads across two servers. Each server has CPU and Memory capacity constraints.
+
+INITIAL STATE
+-------------
+Server capacities:
+- Server 1: CPU 6, Memory 8
+- Server 2: CPU 6, Memory 7
+
+Workloads:
+- W1: value 10, CPU 4, Memory 6
+- W2: value 8,  CPU 3, Memory 4
+- W3: value 7,  CPU 2, Memory 3
+- W4: value 6,  CPU 3, Memory 2
+
+PART 1 — INITIAL OPTIMIZATION
+Solve the initial workload assignment to maximize total value within server capacity constraints.
 Provide:
-- recommended workload allocation
-- expected total business value
-- total GPU utilization
-- explanation of reasoning
-- confidence in the solution
-- how the allocation might change during future workload cycles
-----------------------------------------
-PART 2 — DECISION INTELLIGENCE (DI) APPROACH
-----------------------------------------
-Now solve the same problem using formal Decision Intelligence formulation.
-Define:
-- decision variables
-- objective function
-- constraints
-Then solve the problem using optimization.
-Provide:
-- the formulation
-- recommended workload allocation
-- expected total business value
-- total GPU utilization
-- whether the solution is guaranteed feasible
-- explanation of the optimization result
-- how the optimization process could repeat continuously as workload conditions change
-----------------------------------------
+- assigned workloads per server
+- total value
+- whether all capacity constraints are satisfied
+
+ONE HOUR LATER — CONDITIONS CHANGE
+------------------------------------
+- Server 2 memory drops from 7 → 6
+- Value of W3 increases from 7 → 11
+
+PART 2 — RE-OPTIMIZATION
+Without starting from scratch, determine:
+- Is the current assignment still feasible?
+- Is it still optimal?
+- What is the new optimal assignment?
+- What changed and why?
+
 PART 3 — COMPARISON TABLE
-----------------------------------------
-Provide a comparison table with the following columns:
-| Approach | Allocation Strategy | Total Business Value | GPU Utilization | Feasible? | Confidence | Observations |
+| Approach | Detected Infeasibility? | Re-optimized Correctly? | New Total Value | Confidence |
 Include rows for:
 - AI-only reasoning
 - DI optimization approach
-----------------------------------------
+
 PART 4 — OBSERVATIONS
-----------------------------------------
 Discuss:
-- differences between the two approaches
-- whether AI-only reasoning appeared heuristic
-- whether the DI approach appeared more structured
-- scalability implications as workload volatility and infrastructure constraints increase
-- whether explicit constraints improved explainability and confidence
-- whether larger or reasoning-oriented language models may still struggle as dynamic combinatorial complexity grows without formal optimization
-- why repeated re-optimization becomes important in closed-loop operational systems
-This example is intentionally simple. In small dynamic allocation problems, AI reasoning and optimization methods may sometimes produce similar answers. As workloads fluctuate continuously and infrastructure environments become larger and more dynamic, informal reasoning becomes increasingly unreliable. Decision Intelligence methods provide the structure required for scalable, adaptive, and operationally feasible closed-loop decision systems.
+- whether AI-only reasoning detected that re-optimization was needed
+- whether AI reasoning produced a correct updated assignment
+- whether the DI approach re-solved systematically
+- implications for real-time systems where conditions change continuously
+- whether AI alone is sufficient for closed-loop decision systems
 ```
 
 ---
