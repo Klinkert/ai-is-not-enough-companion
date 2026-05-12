@@ -7,72 +7,89 @@
 ## Experiment Prompt
 
 ```
-You are participating in an experiment comparing AI-only reasoning versus explicit Decision Intelligence (DI) formulation for a constrained AI infrastructure resource allocation problem.
-An AI data center must allocate GPU resources across competing workloads.
-The workloads are:
-Training Job A:
-- GPU requirement: 8 GPUs
-- Expected business value: 15
-Training Job B:
-- GPU requirement: 6 GPUs
-- Expected business value: 11
-Inference Service C:
-- GPU requirement: 4 GPUs
-- Expected business value: 9
-Analytics Workload D:
-- GPU requirement: 5 GPUs
-- Expected business value: 10
-The data center has a total of 16 GPUs available.
-The objective is to maximize total business value while staying within available GPU capacity.
+You are participating in an experiment comparing AI-only reasoning versus explicit Decision Intelligence (DI) formulation for a constrained multi-resource infrastructure allocation problem.
+
+A data center has two servers available for workload placement.
+
+Server capacities:
+- Server 1: CPU capacity = 6, Memory capacity = 8
+- Server 2: CPU capacity = 6, Memory capacity = 7
+
+Workloads to be assigned:
+
+Workload | Value | CPU Demand | Memory Demand
+---------|-------|------------|---------------
+W1       |  10   |     4      |       6
+W2       |   8   |     3      |       4
+W3       |   7   |     2      |       3
+W4       |   6   |     3      |       2
+
+Constraints:
+- Each workload may be assigned to at most one server
+- Each server must not exceed its CPU capacity
+- Each server must not exceed its Memory capacity
+- Workloads not assigned to any server are simply not run
+
+The objective is to maximize total value of assigned workloads while respecting both CPU and memory limits on each server.
+
 Your task is to solve this problem in TWO ways.
+
 ----------------------------------------
 PART 1 — AI-ONLY REASONING
 ----------------------------------------
-Do not explicitly formulate the problem using mathematical optimization, resource allocation methods, integer programming, or exhaustive enumeration.
+Do not explicitly formulate the problem using mathematical optimization, integer programming, or exhaustive enumeration.
+
 Solve the problem naturally as a reasoning-oriented AI assistant.
+
 Provide:
-- recommended workload allocation
-- expected total business value
-- total GPU utilization
+- which workloads are assigned to Server 1
+- which workloads are assigned to Server 2
+- total value of assigned workloads
 - explanation of reasoning
-- confidence in the solution
+- confidence that no better assignment exists
+
 ----------------------------------------
 PART 2 — DECISION INTELLIGENCE (DI) APPROACH
 ----------------------------------------
 Now solve the same problem using formal Decision Intelligence formulation.
+
 Define:
-- decision variables
+- decision variables (binary assignment variables per workload per server)
 - objective function
-- constraints
+- constraints (CPU capacity per server, Memory capacity per server, each workload assigned to at most one server)
+
 Then solve the problem using optimization.
+
 Provide:
 - the formulation
-- recommended workload allocation
-- expected total business value
-- total GPU utilization
-- whether the solution is guaranteed feasible
+- which workloads are assigned to Server 1
+- which workloads are assigned to Server 2
+- total value
+- whether all CPU and memory constraints are satisfied
 - explanation of the optimization result
+
 ----------------------------------------
 PART 3 — COMPARISON TABLE
 ----------------------------------------
 Provide a comparison table with the following columns:
-| Approach | Allocation Strategy | Total Business Value | GPU Utilization | Feasible? | Confidence | Observations |
+| Approach | Server 1 Workloads | Server 2 Workloads | Total Value | All Constraints Met? | Confidence | Observations |
+
 Include rows for:
 - AI-only reasoning
 - DI optimization approach
+
 ----------------------------------------
 PART 4 — OBSERVATIONS
 ----------------------------------------
 Discuss:
-- differences between the two approaches
-- whether AI-only reasoning appeared heuristic
-- whether the DI approach appeared more structured
-- scalability implications as additional workloads, GPU pools, and infrastructure constraints are added
-- whether explicit constraints improved explainability and confidence
-- whether larger or reasoning-oriented language models may still struggle as combinatorial complexity grows without formal optimization
-This example is intentionally simple. In small infrastructure allocation problems, AI reasoning and optimization methods may sometimes produce similar answers. As the number of workloads, GPU pools, scheduling windows, latency constraints, energy limits, and operational objectives increases, informal reasoning becomes increasingly unreliable. Decision Intelligence methods provide the structure required for scalable and operationally feasible AI infrastructure allocation decisions.
+- whether AI-only reasoning correctly coordinated across both resource dimensions (CPU and Memory) simultaneously
+- whether greedy or priority-based reasoning led to constraint violations or suboptimal placement
+- whether the DI approach produced a globally optimal assignment
+- how complexity grows as servers, workloads, and resource dimensions increase
+- whether AI alone is sufficient for real infrastructure placement decisions at scale
 ```
 
 ---
-*From: AI Is Not Enough — Chapter 17  Data Center: Matching workloads for AI Infrastructure with finite GPU Capacity*
+
+*From: AI Is Not Enough — Chapter 17 Data Center Resource Allocation*
 *Repository: https://github.com/Klinkert/ai-is-not-enough-companion*
