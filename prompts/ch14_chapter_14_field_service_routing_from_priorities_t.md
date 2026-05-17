@@ -1,6 +1,6 @@
 # Chapter 14  Field Service Routing: From Priorities to Feasible Paths
 
-> **Tip:** Scan the QR code in the Appendix to copy and paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
+> **Tip:** Copy/paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
 
 ---
 
@@ -85,7 +85,5 @@ Discuss:
 ```
 
 ---
-
-*From: AI Is Not Enough — Chapter 14 Field Service Routing*
+*From: AI Is Not Enough — Chapter 14  Field Service Routing: From Priorities to Feasible Paths*
 *Repository: https://github.com/Klinkert/ai-is-not-enough-companion*
-
