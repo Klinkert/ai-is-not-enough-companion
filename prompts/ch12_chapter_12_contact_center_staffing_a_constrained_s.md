@@ -1,6 +1,6 @@
-# Chapter 12  Contact Center Staffing  A Constrained Staffing Problem
+# Chapter 12  Contact Center Staffing: A Constrained Staffing Problem
 
-> **Tip:** Scan the QR code in the Appendix to copy and paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
+> **Tip:** Copy/paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
 
 ---
 
@@ -21,16 +21,15 @@ Period 4:
 Available shift types are:
 Shift S1:
 - Covers Periods 1 and 2
-- Cost: 4
+- Cost: 8 per agent assigned
 Shift S2:
 - Covers Periods 2 and 3
-- Cost: 5
+- Cost: 8 per agent assigned
 Shift S3:
 - Covers Periods 3 and 4
-- Cost: 3
-Additional understaffing penalty:
-- Penalty cost of 10 per uncovered staffing requirement
-The objective is to minimize total staffing and understaffing cost while satisfying staffing demand as effectively as possible.
+- Cost: 8 per agent assigned
+Understaffing penalty: 100 per agent per period below required demand.
+The objective is to minimize total staffing cost plus understaffing penalties while meeting demand across all periods.
 Your task is to solve this problem in TWO ways.
 ----------------------------------------
 PART 1 — AI-ONLY REASONING
@@ -38,7 +37,7 @@ PART 1 — AI-ONLY REASONING
 Do not explicitly formulate the problem using mathematical optimization, workforce scheduling methods, linear programming, or exhaustive enumeration.
 Solve the problem naturally as a reasoning-oriented AI assistant.
 Provide:
-- recommended staffing assignments
+- recommended staffing assignments (agents per shift)
 - expected staffing shortages, if any
 - explanation of reasoning
 - confidence in the solution
@@ -78,5 +77,5 @@ Discuss:
 ```
 
 ---
-*From: AI Is Not Enough — Chapter 12  Contact Center Staffing  A Constrained Staffing Problem*
+*From: AI Is Not Enough — Chapter 12  Contact Center Staffing: A Constrained Staffing Problem*
 *Repository: https://github.com/Klinkert/ai-is-not-enough-companion*
