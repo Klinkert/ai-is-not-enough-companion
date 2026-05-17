@@ -1,6 +1,6 @@
 # Chapter 8  Lead Prioritization: AI Scoring vs Constrained Selection
 
-> **Tip:** Scan the QR code in the Appendix to copy and paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
+> **Tip:** Copy/paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
 
 ---
 
