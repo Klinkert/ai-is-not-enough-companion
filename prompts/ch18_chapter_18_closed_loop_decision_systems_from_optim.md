@@ -1,6 +1,7 @@
 # Chapter 18  Closed-Loop Decision Systems: From Optimization to Adaptive Control - AI Updates, DI Decides
 
-> **Tip:** Copy/paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
+> **Tip:** Copy/paste thest two prompts directly into ChatGPT, Claude, Gemini, or any AI assistant.
+> Copy/paste Step 1 first, let the AI answer, then copy/paste the second and get the updated answer. 
 
 ---
 
