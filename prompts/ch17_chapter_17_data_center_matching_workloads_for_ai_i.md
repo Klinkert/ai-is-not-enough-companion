@@ -1,6 +1,6 @@
-# Chapter 17  Data Center: Matching workloads for AI Infrastructure with finite GPU Capacity
+# Chapter 17  Data Center: Matching Workloads for AI Infrastructure with Finite GPU Capacity
 
-> **Tip:** Scan the QR code in the Appendix to copy and paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
+> **Tip:** Copy/paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
 
 ---
 
@@ -90,6 +90,5 @@ Discuss:
 ```
 
 ---
-
-*From: AI Is Not Enough — Chapter 17 Data Center Resource Allocation*
+*From: AI Is Not Enough — Chapter 17  Data Center Resource Allocation*
 *Repository: https://github.com/Klinkert/ai-is-not-enough-companion*
