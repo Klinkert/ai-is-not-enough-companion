@@ -1,6 +1,6 @@
 # Chapter 13  Production Scheduling: Coordination Over Time and Resources
 
-> **Tip:** Scan the QR code in the Appendix to copy and paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
+> **Tip:** Copy/paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
 
 ---
 
@@ -60,7 +60,7 @@ Discuss:
 - whether the DI approach appeared more structured
 - scalability implications as additional jobs, machines, and sequencing constraints are added
 - whether explicit constraints improved explainability and confidence
-- whether larger or reasoning-oriented language models may still struggle as combinatorial complexity grows without formal optimization.
+- whether larger or reasoning-oriented language models may still struggle as combinatorial complexity grows without formal optimization
 This example is intentionally simple. In small scheduling problems, AI reasoning and optimization methods may sometimes produce similar answers. As the number of jobs, machines, time dependencies, sequencing constraints, and operational objectives increases, informal reasoning becomes increasingly unreliable. Decision Intelligence methods provide the structure required for scalable and operationally feasible production scheduling decisions.
 ```
 
