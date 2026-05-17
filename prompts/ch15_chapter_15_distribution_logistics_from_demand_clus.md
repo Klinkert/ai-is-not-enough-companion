@@ -1,6 +1,6 @@
 # Chapter 15  Distribution Logistics: From Demand Clusters to Network Flow
 
-> **Tip:** Scan the QR code in the Appendix to copy and paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
+> **Tip:** Copy/paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
 
 ---
 
@@ -8,33 +8,18 @@
 
 ```
 You are participating in an experiment comparing AI-only reasoning versus explicit Decision Intelligence (DI) formulation for a constrained distribution logistics problem.
-A company must distribute products from distribution centers to customer regions.
-The distribution centers have the following supply capacities:
-Distribution Center A:
-- Available supply: 70 units
-Distribution Center B:
-- Available supply: 50 units
-The customer regions have the following demand requirements:
-Region 1:
-- Required demand: 40 units
-Region 2:
-- Required demand: 30 units
-Region 3:
-- Required demand: 50 units
-Estimated transportation costs per unit are:
-Distribution Center A → Region 1:
-- Cost per unit: 4
-Distribution Center A → Region 2:
-- Cost per unit: 6
-Distribution Center A → Region 3:
-- Cost per unit: 8
-Distribution Center B → Region 1:
-- Cost per unit: 5
-Distribution Center B → Region 2:
-- Cost per unit: 3
-Distribution Center B → Region 3:
-- Cost per unit: 4
-The objective is to minimize total transportation cost while satisfying all regional demand requirements.
+A company operates a logistics network with four nodes: a Plant, a Hub, Region 1, and Region 2.
+Network supply and demand:
+- Plant: supplies 100 units
+- Hub: transshipment node (no net supply or demand)
+- Region 1: requires 40 units
+- Region 2: requires 60 units
+Available shipping arcs, unit costs, and capacities:
+- Plant → Hub: cost = 2, capacity = 100
+- Plant → Region 1: cost = 5, capacity = 40
+- Hub → Region 1: cost = 1, capacity = 60
+- Hub → Region 2: cost = 3, capacity = 80
+The objective is to determine how much product to send on each arc to satisfy all demand at minimum total transportation cost.
 Your task is to solve this problem in TWO ways.
 ----------------------------------------
 PART 1 — AI-ONLY REASONING
@@ -42,7 +27,7 @@ PART 1 — AI-ONLY REASONING
 Do not explicitly formulate the problem using mathematical optimization, transportation models, network flow methods, or exhaustive enumeration.
 Solve the problem naturally as a reasoning-oriented AI assistant.
 Provide:
-- recommended shipment allocations
+- recommended flow on each arc
 - expected total transportation cost
 - explanation of reasoning
 - confidence in the solution
@@ -53,19 +38,19 @@ Now solve the same problem using formal Decision Intelligence formulation.
 Define:
 - decision variables
 - objective function
-- constraints
+- constraints (flow balance, capacity bounds)
 Then solve the problem using optimization.
 Provide:
 - the formulation
-- recommended shipment allocations
+- recommended flow on each arc
 - expected total transportation cost
-- whether the solution is guaranteed feasible
+- whether all flow balance and capacity constraints are satisfied
 - explanation of the optimization result
 ----------------------------------------
 PART 3 — COMPARISON TABLE
 ----------------------------------------
 Provide a comparison table with the following columns:
-| Approach | Distribution Strategy | Expected Transportation Cost | Feasible? | Confidence | Observations |
+| Approach | Flow Strategy | Total Cost | All Constraints Met? | Confidence | Observations |
 Include rows for:
 - AI-only reasoning
 - DI optimization approach
@@ -73,13 +58,11 @@ Include rows for:
 PART 4 — OBSERVATIONS
 ----------------------------------------
 Discuss:
-- differences between the two approaches
-- whether AI-only reasoning appeared heuristic
-- whether the DI approach appeared more structured
-- scalability implications as additional regions, distribution centers, and transportation constraints are added
-- whether explicit constraints improved explainability and confidence
-- whether larger or reasoning-oriented language models may still struggle as combinatorial complexity grows without formal optimization
-This example is intentionally simple. In small logistics problems, AI reasoning and optimization methods may sometimes produce similar answers. As the number of regions, distribution centers, transportation links, operational constraints, and time dependencies increases, informal reasoning becomes increasingly unreliable. Decision Intelligence methods provide the structure required for scalable and operationally feasible logistics decisions.
+- whether AI-only reasoning correctly coordinated flow across the full network
+- whether the DI approach produced a globally optimal flow pattern
+- whether local cheapest-link reasoning led to suboptimal decisions
+- scalability implications as the network grows in nodes and arcs
+- whether explicit flow balance and capacity constraints improved solution quality
 ```
 
 ---
