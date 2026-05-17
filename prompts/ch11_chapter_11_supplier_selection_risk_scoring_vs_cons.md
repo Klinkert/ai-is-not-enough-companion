@@ -1,6 +1,6 @@
 # Chapter 11  Supplier Selection: Risk Scoring vs Constrained Sourcing
 
-> **Tip:** Scan the QR code in the Appendix to copy and paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
+> **Tip:** Scan the QR code in the Appendix to find and copy/paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
 
 ---
 
@@ -8,24 +8,25 @@
 
 ```
 You are participating in an experiment comparing AI-only reasoning versus explicit Decision Intelligence (DI) formulation for a constrained supplier selection problem.
-A company must procure at least 100 units of material from suppliers.
+A company must procure exactly 100 units of a critical component from three suppliers.
 The suppliers have the following characteristics:
-Supplier A:
-- Unit cost: $5
-- Risk score: 1
-- Maximum capacity: 40 units
-Supplier B:
-- Unit cost: $4
-- Risk score: 2
+Supplier 1:
+- Unit cost: $5 per unit
+- Risk rate: 0.2 per unit
+- Maximum capacity: 60 units
+Supplier 2:
+- Unit cost: $6 per unit
+- Risk rate: 0.1 per unit
 - Maximum capacity: 50 units
-Supplier C:
-- Unit cost: $3
-- Risk score: 4
-- Maximum capacity: 80 units
+Supplier 3:
+- Unit cost: $4 per unit
+- Risk rate: 0.3 per unit
+- Maximum capacity: 70 units
 Constraints:
-- Total procurement must be at least 100 units
-- Total supplier risk score must not exceed 25
-The objective is to minimize total procurement cost while satisfying demand and risk constraints.
+- Total procurement must equal exactly 100 units
+- Total risk exposure (sum of risk rate × units for each supplier) must not exceed 25
+- Each supplier cannot supply more than their stated capacity
+The objective is to minimize total procurement cost while satisfying demand, capacity, and risk constraints.
 Your task is to solve this problem in TWO ways.
 ----------------------------------------
 PART 1 — AI-ONLY REASONING
@@ -33,7 +34,7 @@ PART 1 — AI-ONLY REASONING
 Do not explicitly formulate the problem using mathematical optimization, linear programming, mixed-integer programming, or exhaustive enumeration.
 Solve the problem naturally as a reasoning-oriented AI assistant.
 Provide:
-- recommended supplier allocations
+- recommended supplier allocations (units from each supplier)
 - expected total procurement cost
 - explanation of reasoning
 - confidence in the solution
@@ -69,7 +70,7 @@ Discuss:
 - whether the DI approach appeared more structured
 - scalability implications as the number of suppliers and constraints increases
 - whether explicit constraints improved explainability and confidence
-- whether larger or reasoning-oriented language models may still struggle as combinatorial complexity grows without formal optimization.
+- whether larger or reasoning-oriented language models may still struggle as combinatorial complexity grows without formal optimization
 ```
 
 ---
