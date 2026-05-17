@@ -1,6 +1,6 @@
 # Chapter 10  Inventory Allocation: Forecasting vs Constrained Distribution
 
-> **Tip:** Scan the QR code in the Appendix to copy and paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
+> **Tip:** Copy and paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
 
 ---
 
