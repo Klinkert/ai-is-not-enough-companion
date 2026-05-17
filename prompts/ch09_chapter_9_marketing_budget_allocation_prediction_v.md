@@ -1,7 +1,7 @@
 
 # Chapter 9  Marketing Budget Allocation: Prediction vs Constrained Optimization
 
-> **Tip:** Scan the QR code in the Appendix to find and copy/paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
+> **Tip:** Copy/paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
 
 ---
 
