@@ -1,6 +1,6 @@
 # Chapter 11  Supplier Selection: Risk Scoring vs Constrained Sourcing
 
-> **Tip:** Scan the QR code in the Appendix to find and copy/paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
+> **Tip:** Copy/paste this prompt directly into ChatGPT, Claude, Gemini, or any AI assistant.
 
 ---
 
