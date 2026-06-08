@@ -9,8 +9,8 @@
 
 | Notebook | Solver | Requirement |
 |----------|--------|-------------|
-| `AI_Is_Not_Enough_Companion_Code.ipynb` | Google OR-Tools (CPU) | Python 3.8+, any OS, no GPU needed |
-| `AI_Is_Not_Enough_cuOPT_Edition2.2.ipynb` | NVIDIA cuOPT (GPU) | NVIDIA GPU, Linux or WSL2 |
+| `01_Edition1_OR_Tools.ipynb` | Google OR-Tools (CPU) | Python 3.8+, any OS, no GPU needed |
+| `02_Edition2_cuOPT_GPU.ipynb` | NVIDIA cuOPT (GPU) | NVIDIA GPU, Linux or WSL2 |
 
 **Both notebooks produce identical solutions.** The solver is the execution layer. The model structure is invariant. This is the book's central thesis demonstrated in code.
 
@@ -22,13 +22,13 @@ No GPU required. Runs on Windows, Mac, or Linux.
 
 ### Run in your browser (no install)
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Klinkert/ai-is-not-enough-companion/blob/main/AI_Is_Not_Enough_Companion_Code.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Klinkert/ai-is-not-enough-companion/blob/main/01_Edition1_OR_Tools.ipynb)
 
 ### Run locally
 
 ```bash
 pip install ortools
-jupyter notebook AI_Is_Not_Enough_Companion_Code.ipynb
+jupyter notebook 01_Edition1_OR_Tools.ipynb
 ```
 
 ---
@@ -41,7 +41,7 @@ Features a dual-backend design: set `BACKEND = 'cuopt'` for GPU or `BACKEND = 's
 ### Hardware requirements
 
 | Component | Minimum |
-|-----------|---------|
+|-----------|---------| 
 | GPU | NVIDIA Compute Capability ≥ 7.0 (any RTX 20/30/40 series) |
 | Driver | ≥ 527.41. Check with: `nvidia-smi` |
 | Python | 3.10 – 3.12 (not 3.13) |
@@ -64,7 +64,7 @@ pip install --extra-index-url https://pypi.nvidia.com/ cuopt-cu12 scipy numpy ju
 ### Launch
 
 ```bash
-jupyter notebook AI_Is_Not_Enough_cuOPT_Edition2.2.ipynb
+jupyter notebook 02_Edition2_cuOPT_GPU.ipynb
 ```
 
 ---
@@ -85,6 +85,12 @@ jupyter notebook AI_Is_Not_Enough_cuOPT_Edition2.2.ipynb
 | 17 | Data Center Resource Allocation | Multi-Dimensional Knapsack |
 | 18 | Dynamic Re-Optimization | Closed-Loop AI + DI |
 | 19 | cuOPT Reference — All Problems | GPU-Accelerated Templates |
+
+---
+
+## Test It Yourself — Experiment Prompts
+
+The `prompts/` folder contains AI experiment prompts for Chapters 8–18. Each prompt lets you test the AI prediction side of the AI+DI loop — paste it into any LLM and compare the AI output to the optimized solution in the notebook.
 
 ---
 
